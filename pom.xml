@@ -24,7 +24,7 @@
 
     </properties>
 
-    <name>ibit-mybatis</name>
+    <name>ibit-mybatis-generator</name>
     <url>https://github.com/ibit-tech/ibit-mybatis-generator</url>
     <description>ibit-mybatis-generator</description>
 
