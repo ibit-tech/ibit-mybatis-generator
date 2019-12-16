@@ -37,13 +37,13 @@ public class EntityGenerator extends AbstractGenerator {
     private static final String CLASS_LOMBOK_DATA = "lombok.Data";
 
     /**
-     * lombok.Setter
+     * lombok.AllArgsConstructor
      */
     private static final String CLASS_LOMBOK_ALL_ARGS_CONSTRUCTOR = "lombok.AllArgsConstructor";
 
 
     /**
-     * lombok.Setter
+     * lombok.NoArgsConstructor
      */
     private static final String CLASS_LOMBOK_NO_ARGS_CONSTRUCTOR = "lombok.NoArgsConstructor";
 
