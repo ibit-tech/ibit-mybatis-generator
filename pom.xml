@@ -25,12 +25,12 @@
     </properties>
 
     <name>ibit-mybatis</name>
-    <url>https://github.com/ibit-tech/ibit-mybatis</url>
-    <description>Sql builder</description>
+    <url>https://github.com/ibit-tech/ibit-mybatis-generator</url>
+    <description>ibit-mybatis-generator</description>
 
     <scm>
-        <url>https://github.com/ibit-tech/ibit-mybatis</url>
-        <connection>scm:git:https://github.com/ibit-tech/ibit-mybatis.git</connection>
+        <url>https://github.com/ibit-tech/ibit-mybatis-generator</url>
+        <connection>scm:git:https://github.com/ibit-tech/ibit-mybatis-generator.git</connection>
     </scm>
 
     <organization>
