@@ -295,12 +295,22 @@ public class Generator {
             while (rs.next()) {
                 String columnName = rs.getString("COLUMN_NAME");
                 tableInfo.addColumn(columnName, getColumnType(rs), rs.getInt("DATA_TYPE")
-                        , ids.contains(columnName), rs.getBoolean("IS_AUTOINCREMENT")
-                        , rs.getBoolean("IS_NULLABLE"), formatComment(rs.getString("REMARKS")));
+                        , ids.contains(columnName), getBoolean(rs.getString("IS_AUTOINCREMENT"))
+                        , getBoolean(rs.getString("IS_NULLABLE")), formatComment(rs.getString("REMARKS")));
                 columns.add(columnName);
             }
             return tableInfo;
         }
+    }
+
+    /**
+     * 判断boolean
+     *
+     * @param value 值
+     * @return 值
+     */
+    private boolean getBoolean(String value) {
+        return "YES".equals(value);
     }
 
     /**
