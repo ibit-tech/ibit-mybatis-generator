@@ -291,7 +291,7 @@ public class Generator {
 
         Set<String> ids = getIds(conn, table);
         List<String> columns = new ArrayList<>();
-        try (ResultSet rs = conn.getMetaData().getColumns(null, conn.getCatalog(), table, "%")) {
+        try (ResultSet rs = conn.getMetaData().getColumns(conn.getCatalog(), conn.getSchema(), table, "%")) {
             while (rs.next()) {
                 String columnName = rs.getString("COLUMN_NAME");
                 tableInfo.addColumn(columnName, getColumnType(rs), rs.getInt("DATA_TYPE")

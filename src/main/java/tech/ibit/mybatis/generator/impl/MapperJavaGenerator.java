@@ -27,7 +27,7 @@ public class MapperJavaGenerator extends AbstractGenerator {
     /**
      * 生成文件
      *
-     * @param tableInfo        表
+     * @param tableInfo     表
      * @param mapperProject mapper项目信息
      * @param entityProject 实体项目信息
      * @param override      是否覆盖
