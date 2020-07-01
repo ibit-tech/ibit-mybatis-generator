@@ -19,17 +19,17 @@ public class EntityGenerator extends AbstractGenerator {
     /**
      * 表字段注解
      */
-    private static final String CLASS_DB_TABLE = "tech.ibit.sqlbuilder.annotation.DbTable";
+    private static final String CLASS_DB_TABLE = "tech.ibit.mybatis.sqlbuilder.annotation.DbTable";
 
     /**
      * 主键注解
      */
-    private static final String CLASS_DB_ID = "tech.ibit.sqlbuilder.annotation.DbId";
+    private static final String CLASS_DB_ID = "tech.ibit.mybatis.sqlbuilder.annotation.DbId";
 
     /**
      * 列注解
      */
-    private static final String CLASS_DB_COLUMN = "tech.ibit.sqlbuilder.annotation.DbColumn";
+    private static final String CLASS_DB_COLUMN = "tech.ibit.mybatis.sqlbuilder.annotation.DbColumn";
 
     /**
      * lombok.Data
@@ -51,7 +51,7 @@ public class EntityGenerator extends AbstractGenerator {
     /**
      * DBId路径
      */
-    private static final String CLASS_MULTI_ID = "tech.ibit.sqlbuilder.MultiId";
+    private static final String CLASS_MULTI_ID = "tech.ibit.mybatis.sqlbuilder.MultiId";
 
     /**
      * DBId

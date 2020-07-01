@@ -19,12 +19,12 @@ public class PropertyGenerator extends AbstractGenerator {
     /**
      * 表引入类
      */
-    private static final String CLASS_DB_TABLE = "tech.ibit.sqlbuilder.Table";
+    private static final String CLASS_DB_TABLE = "tech.ibit.mybatis.sqlbuilder.Table";
 
     /**
      * 列引入类
      */
-    private static final String CLASS_DB_COLUMN = "tech.ibit.sqlbuilder.Column";
+    private static final String CLASS_DB_COLUMN = "tech.ibit.mybatis.sqlbuilder.Column";
 
     /**
      * 生成文件

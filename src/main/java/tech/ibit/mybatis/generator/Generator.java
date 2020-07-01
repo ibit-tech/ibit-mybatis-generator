@@ -3,7 +3,9 @@ package tech.ibit.mybatis.generator;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
-import tech.ibit.mybatis.generator.impl.*;
+import tech.ibit.mybatis.generator.impl.EntityGenerator;
+import tech.ibit.mybatis.generator.impl.MapperJavaGenerator;
+import tech.ibit.mybatis.generator.impl.PropertyGenerator;
 import tech.ibit.mybatis.generator.table.TableInfo;
 
 import java.sql.Connection;
@@ -100,13 +102,6 @@ public class Generator {
     private boolean withMapper;
 
     /**
-     * 是否生成Dao
-     */
-    @Setter
-    @Getter
-    private boolean withDao;
-
-    /**
      * 表生成器
      */
     private PropertyGenerator propertyGenerator;
@@ -116,20 +111,11 @@ public class Generator {
      */
     private EntityGenerator entityGenerator;
 
-    /**
-     * Dao生成器
-     */
-    private DaoGenerator daoGenerator;
 
     /**
      * Mapper java代码生成器
      */
     private MapperJavaGenerator mapperJavaGenerator;
-
-    /**
-     * Mapper xml代码生成器
-     */
-    private MapperXmlGenerator mapperXmlGenerator;
 
     /**
      * 作者
@@ -158,9 +144,7 @@ public class Generator {
 
         propertyGenerator = new PropertyGenerator();
         entityGenerator = new EntityGenerator();
-        daoGenerator = new DaoGenerator();
         mapperJavaGenerator = new MapperJavaGenerator();
-        mapperXmlGenerator = new MapperXmlGenerator();
     }
 
     /**
@@ -209,7 +193,7 @@ public class Generator {
      * @return 判断结果
      */
     private boolean needGenerateFiles() {
-        return withEntity || withDao || withMapper;
+        return withEntity || withMapper;
     }
 
     /**
@@ -226,7 +210,7 @@ public class Generator {
             return;
         }
 
-        if (!withEntity && !withDao) {
+        if (!withEntity && !withMapper) {
             return;
         }
 
@@ -253,15 +237,8 @@ public class Generator {
                         if (withMapper) {
                             ProjectInfo mapperProject = getProjectInfoWithDefault(getMapperProject(), getNotNullDefaultProject());
                             mapperJavaGenerator.generateFile(tableInfo, mapperProject, entityProject, override, author);
-                            mapperXmlGenerator.generateFile(tableInfo, mapperProject, entityProject, override);
                         }
 
-                        // 生成Dao
-                        if (withDao) {
-                            ProjectInfo daoProject = getProjectInfoWithDefault(getDaoProject(), getNotNullDefaultProject());
-                            ProjectInfo mapperProject = getProjectInfoWithDefault(getMapperProject(), getNotNullDefaultProject());
-                            daoGenerator.generateFile(tableInfo, daoProject, mapperProject, entityProject, override, author);
-                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -382,9 +359,7 @@ public class Generator {
      */
     public void setWithAll() {
         withEntity = true;
-        withDao = true;
         withMapper = true;
     }
-
 
 }
