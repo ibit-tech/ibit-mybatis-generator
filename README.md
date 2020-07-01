@@ -7,7 +7,7 @@
 #### Gradle
 
 ```
-compile 'tech.ibit:ibit-mybatis-generator:1.0-SNAPSHOT'
+compile 'tech.ibit:ibit-mybatis-generator:2.x'
 ```
 
 #### Maven
@@ -16,11 +16,9 @@ compile 'tech.ibit:ibit-mybatis-generator:1.0-SNAPSHOT'
 <dependency>
   <groupId>tech.ibit</groupId>
   <artifactId>ibit-mybatis-generator</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>2.x</version>
 </dependency>
 ```
-
-**说明**：</br>此版本功能不完善，暂时不会打release包
 
 ### 代码示例
 
@@ -57,11 +55,9 @@ public void test() {
     // 是否覆盖（false：文件已经存在，则不覆盖）
     generator.setOverride(true);
 
-    // generator.setWithDao(); // 设置只生成Dao
     // generator.setWithEntity(); // 设置只生成Entity
     // generator.setWithMapper(); // 设置只生成Mapper文件
 
-    // generator.setDaoProject(); // 可以单独指定Dao项目路径
     // generator.setEntityProject(); // 可以单独设置entity项目路径
     // generator.setMapperProject(); // 可以单独设置mapper项目路径
 
