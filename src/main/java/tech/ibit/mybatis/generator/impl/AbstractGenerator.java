@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * 抽象生成器
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 abstract class AbstractGenerator {
 

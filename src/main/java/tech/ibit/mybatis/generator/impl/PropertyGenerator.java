@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 生成表信息
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 public class PropertyGenerator extends AbstractGenerator {
 
@@ -36,7 +36,7 @@ public class PropertyGenerator extends AbstractGenerator {
      * @param author      作者
      */
     public void generateFile(TableInfo tableInfo, String basePackage, String projectDir, boolean override, String author) {
-        String filePath = Utils.getTableFilePath(tableInfo.getTable(), basePackage, projectDir);
+        String filePath = Utils.getPropertyFilePath(tableInfo.getTable(), basePackage, projectDir);
         File file = new File(filePath);
         if (needCreateNewFile(file, override)) {
             String javaCode = generateJavaCode(tableInfo, basePackage, author);
@@ -58,7 +58,7 @@ public class PropertyGenerator extends AbstractGenerator {
 
         StringBuilder javaCode = new StringBuilder();
 
-        javaCode.append(String.format("package %s;\n\n", Utils.getTablePackage(basePackage)));
+        javaCode.append(String.format("package %s;\n\n", Utils.getPropertyPackage(basePackage)));
 
         List<String> importClasses = new ArrayList<>();
         importClasses.add(CLASS_DB_TABLE);
@@ -76,7 +76,7 @@ public class PropertyGenerator extends AbstractGenerator {
                 + SPACE + "*/\n";
         javaCode.append(String.format(titleTemplate, tableInfo.getTable(), StringUtils.trimToEmpty(author)));
 
-        javaCode.append(String.format("public interface %s {\n\n", Utils.getTableClassName4Short(tableInfo.getTable())));
+        javaCode.append(String.format("public interface %s {\n\n", Utils.getPropertyClassName4Short(tableInfo.getTable())));
 
         // 表字段模板
         String tableTemplate = BLANK + "/**\n"

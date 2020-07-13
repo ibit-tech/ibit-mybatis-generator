@@ -10,7 +10,7 @@ import java.sql.Types;
 /**
  * 模板列对象
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 @Getter
 public class ColumnInfo {

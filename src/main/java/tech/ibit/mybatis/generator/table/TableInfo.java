@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * 模板表对象
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 @Getter
 public class TableInfo {

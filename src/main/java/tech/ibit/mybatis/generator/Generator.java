@@ -20,7 +20,7 @@ import java.util.Set;
 /**
  * 代码生成器
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 public class Generator {
 
@@ -71,13 +71,6 @@ public class Generator {
     @Setter
     @Getter
     private ProjectInfo mapperProject;
-
-    /**
-     * Dao项目信息
-     */
-    @Setter
-    @Getter
-    private ProjectInfo daoProject;
 
 
     /**
@@ -273,7 +266,7 @@ public class Generator {
                 String columnName = rs.getString("COLUMN_NAME");
                 tableInfo.addColumn(columnName, getColumnType(rs), rs.getInt("DATA_TYPE")
                         , ids.contains(columnName), getBoolean(rs.getString("IS_AUTOINCREMENT"))
-                        , getBoolean(rs.getString("IS_NULLABLE")), formatComment(rs.getString("REMARKS")));
+                        , getBoolean(rs.getString("IS_NULLABLE")), formatComment(rs.getString("REMARKS"), columnName));
                 columns.add(columnName);
             }
             return tableInfo;
@@ -319,7 +312,7 @@ public class Generator {
 
         try (ResultSet rs = conn.getMetaData().getTables(null, null, table, null)) {
             if (rs.next()) {
-                return formatComment(rs.getString("REMARKS"));
+                return formatComment(rs.getString("REMARKS"), table);
             }
         }
         return "";
@@ -331,8 +324,11 @@ public class Generator {
      * @param comment 备注
      * @return 格式化后的备注
      */
-    private String formatComment(String comment) {
+    private String formatComment(String comment, String defaultValue) {
         comment = StringUtils.trimToEmpty(comment);
+        if (comment.isEmpty()) {
+            return defaultValue;
+        }
         return comment.replace('\n', ' ');
     }
 

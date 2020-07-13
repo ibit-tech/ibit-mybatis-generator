@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 项目基本信息
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 @Data
 @AllArgsConstructor

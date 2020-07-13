@@ -1,0 +1,41 @@
+%package%
+
+%imports%
+
+/**
+ * SingleIdMapper for %tableName%
+ *
+ * @author %author%
+ */
+public interface %mapperName% extends SingleIdMapper<%entityName%, %idName%> {
+
+    /**
+     * 获取实体类型
+     *
+     * @return 实体类型
+     */
+    @Override
+    default Class<%entityName%> getPoClazz() {
+        return %entityName%.class;
+    }
+
+    /**
+     * 获取默认的表对象
+     *
+     * @return 表对象
+     */
+    @Override
+    default Table getDefaultTable() {
+        return %propertyName%.TABLE;
+    }
+
+    /**
+     * 获取主键列
+     *
+     * @return 主键列
+     */
+    @Override
+    default Column getId() {
+        return %propertyName%.%idColumn%;
+    }
+}

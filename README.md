@@ -47,7 +47,7 @@ public void test() {
     generator.setDefaultProject(new ProjectInfo(projectDir, basePackage));
 
     // 指定作者
-    generator.setAuthor("IBIT TECH");
+    generator.setAuthor("IBIT程序猿");
 
     // 设置生成所有类型文件，Mapper, Dao, Entity
     generator.setWithAll();

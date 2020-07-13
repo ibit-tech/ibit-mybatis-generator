@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * 生成实体
  *
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 public class EntityGenerator extends AbstractGenerator {
 
@@ -150,24 +150,13 @@ public class EntityGenerator extends AbstractGenerator {
 
         code.append("\n");
 
-        String titleTemplateWithComment = "/**\n"
-                + SPACE + "* Entity for %s(%s)\n"
-                + SPACE + "*\n"
-                + SPACE + "* @author %s\n"
-                + SPACE + "*/\n";
-
         String titleTemplate = "/**\n"
                 + SPACE + "* Entity for %s\n"
                 + SPACE + "*\n"
                 + SPACE + "* @author %s\n"
                 + SPACE + "*/\n";
 
-        if (StringUtils.isNotBlank(tableInfo.getComment())) {
-            code.append(String.format(titleTemplateWithComment, tableInfo.getTable()
-                    , tableInfo.getComment(), StringUtils.trimToEmpty(author)));
-        } else {
-            code.append(String.format(titleTemplate, tableInfo.getTable(), StringUtils.trimToEmpty(author)));
-        }
+        code.append(String.format(titleTemplate, tableInfo.getTable(), StringUtils.trimToEmpty(author)));
 
         // 扩展lombok信息
         appendLombok(extraImportClasses, code);

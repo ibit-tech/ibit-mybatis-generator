@@ -39,7 +39,7 @@ public class GeneratorTest {
         generator.setDefaultProject(new ProjectInfo(projectDir, basePackage));
 
         // 指定作者
-        generator.setAuthor("IBIT TECH");
+        generator.setAuthor("IBIT程序猿");
 
         // 设置生成所有类型文件，Mapper, Dao, Entity
         generator.setWithAll();
@@ -47,13 +47,11 @@ public class GeneratorTest {
         // 是否覆盖（false：文件已经存在，则不覆盖）
         generator.setOverride(true);
 
-        // generator.setWithDao(); // 设置只生成Dao
-        // generator.setWithEntity(); // 设置只生成Entity
-        // generator.setWithMapper(); // 设置只生成Mapper文件
-
-        // generator.setDaoProject(); // 可以单独指定Dao项目路径
-        // generator.setEntityProject(); // 可以单独设置entity项目路径
-        // generator.setMapperProject(); // 可以单独设置mapper项目路径
+//         generator.setWithEntity(); // 设置只生成Entity
+//         generator.setWithMapper(); // 设置只生成Mapper文件
+//
+//         generator.setEntityProject(); // 可以单独设置entity项目路径
+//         generator.setMapperProject(); // 可以单独设置mapper项目路径
 
         generator.generateFiles();
 

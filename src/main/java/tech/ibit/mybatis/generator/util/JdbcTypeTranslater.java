@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author IBIT TECH
+ * @author IBIT程序猿
  */
 public class JdbcTypeTranslater {
     

@@ -5,14 +5,18 @@ import org.apache.commons.lang.StringUtils;
 import java.io.File;
 
 /**
- * @author IBIT TECH
+ * 工具类
+ *
+ * @author IBIT程序猿
  */
 public class Utils {
 
-    private Utils() {}
+    private Utils() {
+    }
 
     /**
      * Get entity class name for short by table name
+     *
      * @param table table name
      * @return Class name for short
      */
@@ -29,6 +33,7 @@ public class Utils {
 
     /**
      * Get entity class name by table name
+     *
      * @param table table name
      * @return Class name
      */
@@ -38,6 +43,7 @@ public class Utils {
 
     /**
      * Get entity class package
+     *
      * @param basePackage base package
      * @return package
      */
@@ -47,6 +53,7 @@ public class Utils {
 
     /**
      * Get entity class file path
+     *
      * @param table table name
      * @return Class name file path
      */
@@ -56,42 +63,47 @@ public class Utils {
 
     /**
      * Get table class name for short by table name
+     *
      * @param table table name
      * @return Class name for short
      */
-    public static String getTableClassName4Short(String table) {
+    public static String getPropertyClassName4Short(String table) {
         return getClassName4Short(table, "Properties");
     }
 
     /**
      * Get table class name by table name
+     *
      * @param table table name
      * @return Class name
      */
-    public static String getTableClassName(String table, String basePackage) {
+    public static String getPropertyClassName(String table, String basePackage) {
         return getClassName(table, "Properties", basePackage, "entity.property");
     }
 
     /**
      * Get table class package
+     *
      * @param basePackage base package
      * @return package
      */
-    public static String getTablePackage(String basePackage) {
+    public static String getPropertyPackage(String basePackage) {
         return getPackage(basePackage, "entity.property");
     }
 
     /**
      * Get table class file path
+     *
      * @param table table name
      * @return Class file path
      */
-    public static String getTableFilePath(String table, String basePackage, String projectDir) {
+    public static String getPropertyFilePath(String table, String basePackage, String projectDir) {
         return getClassFilePath(table, "Properties", basePackage, "entity.property", projectDir);
     }
 
     /**
      * Get table primary key class name for short by table name
+     *
      * @param table table name
      * @return Class name for short
      */
@@ -101,6 +113,7 @@ public class Utils {
 
     /**
      * Get table primary key class name by table name
+     *
      * @param table table name
      * @return Class name
      */
@@ -110,6 +123,7 @@ public class Utils {
 
     /**
      * Get table primary key class package
+     *
      * @param basePackage base package
      * @return package
      */
@@ -119,6 +133,7 @@ public class Utils {
 
     /**
      * Get table primary key class file path
+     *
      * @param table table name
      * @return Class file path
      */
@@ -133,6 +148,7 @@ public class Utils {
 
     /**
      * Get class name for short of class
+     *
      * @param clazzName Name fo Class
      * @return name for short
      */
@@ -144,6 +160,7 @@ public class Utils {
 
     /**
      * Get mapper class name for short by table name
+     *
      * @param table table name
      * @return Class name for short
      */
@@ -153,6 +170,7 @@ public class Utils {
 
     /**
      * Get mapper class name by table name
+     *
      * @param table table name
      * @return Class name
      */
@@ -162,6 +180,7 @@ public class Utils {
 
     /**
      * Get mapper class file path
+     *
      * @param table table name
      * @return Class file path
      */
@@ -171,6 +190,7 @@ public class Utils {
 
     /**
      * Get mapper class package
+     *
      * @param basePackage base package
      * @return package
      */
@@ -181,6 +201,7 @@ public class Utils {
 
     /**
      * Get mapper class name for short by table name
+     *
      * @param table table name
      * @return Class name for short
      */
@@ -190,6 +211,7 @@ public class Utils {
 
     /**
      * Get mapper class name by table name
+     *
      * @param table table name
      * @return Class name
      */
@@ -199,6 +221,7 @@ public class Utils {
 
     /**
      * Get mapper class file path
+     *
      * @param table table name
      * @return Class file path
      */
@@ -208,6 +231,7 @@ public class Utils {
 
     /**
      * Get mapper class package
+     *
      * @param basePackage base package
      * @return package
      */
@@ -218,6 +242,7 @@ public class Utils {
 
     /**
      * Get mapper class name for short by table name
+     *
      * @param table table name
      * @return Class name for short
      */
@@ -227,6 +252,7 @@ public class Utils {
 
     /**
      * Get mapper class name by table name
+     *
      * @param table table name
      * @return Class name
      */
@@ -236,6 +262,7 @@ public class Utils {
 
     /**
      * Get mapper class file path
+     *
      * @param table table name
      * @return Class file path
      */
@@ -245,6 +272,7 @@ public class Utils {
 
     /**
      * Get mapper class package
+     *
      * @param basePackage base package
      * @return package
      */
@@ -255,6 +283,7 @@ public class Utils {
 
     /**
      * Get entity class name by table name
+     *
      * @param table table name
      * @return Class name
      */
@@ -264,8 +293,9 @@ public class Utils {
 
     /**
      * Get package directory
+     *
      * @param basePackage base package name
-     * @param projectDir project directory
+     * @param projectDir  project directory
      * @return directory
      */
     public static String getPackageDir(String basePackage, String projectDir) {
@@ -278,6 +308,7 @@ public class Utils {
 
     /**
      * Get resource directory
+     *
      * @param basePackage
      * @param projectDir
      * @return
@@ -292,6 +323,7 @@ public class Utils {
 
     /**
      * Get mapper class  xml file path
+     *
      * @param table table name
      * @return Class xml file path
      */
