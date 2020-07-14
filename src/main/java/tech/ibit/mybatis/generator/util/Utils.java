@@ -34,7 +34,8 @@ public class Utils {
     /**
      * Get entity class name by table name
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
      * @return Class name
      */
     public static String getEntityName(String table, String basePackage) {
@@ -54,7 +55,9 @@ public class Utils {
     /**
      * Get entity class file path
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
+     * @param projectDir  project directory
      * @return Class name file path
      */
     public static String getEntityFilePath(String table, String basePackage, String projectDir) {
@@ -74,7 +77,8 @@ public class Utils {
     /**
      * Get table class name by table name
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
      * @return Class name
      */
     public static String getPropertyClassName(String table, String basePackage) {
@@ -94,7 +98,9 @@ public class Utils {
     /**
      * Get table class file path
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
+     * @param projectDir  project directory
      * @return Class file path
      */
     public static String getPropertyFilePath(String table, String basePackage, String projectDir) {
@@ -114,7 +120,8 @@ public class Utils {
     /**
      * Get table primary key class name by table name
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
      * @return Class name
      */
     public static String getEntityIdClassName(String table, String basePackage) {
@@ -134,14 +141,22 @@ public class Utils {
     /**
      * Get table primary key class file path
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
+     * @param projectDir  project directory
      * @return Class file path
      */
     public static String getEntityIdFilePath(String table, String basePackage, String projectDir) {
         return getClassFilePath(table, "Key", basePackage, "entity", projectDir);
     }
 
-
+    /**
+     * Get package
+     *
+     * @param basePackage base package
+     * @param subPackage  sub package
+     * @return package
+     */
     public static String getPackage(String basePackage, String subPackage) {
         return StringUtils.isBlank(basePackage) ? subPackage : (basePackage + "." + subPackage);
     }
@@ -171,7 +186,8 @@ public class Utils {
     /**
      * Get mapper class name by table name
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
      * @return Class name
      */
     public static String getMapperClassName(String table, String basePackage) {
@@ -181,7 +197,9 @@ public class Utils {
     /**
      * Get mapper class file path
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
+     * @param projectDir  project directory
      * @return Class file path
      */
     public static String getMapperClassFilePath(String table, String basePackage, String projectDir) {
@@ -200,91 +218,10 @@ public class Utils {
 
 
     /**
-     * Get mapper class name for short by table name
-     *
-     * @param table table name
-     * @return Class name for short
-     */
-    public static String getDaoClassName4Short(String table) {
-        return getClassName4Short(table, "Dao");
-    }
-
-    /**
-     * Get mapper class name by table name
-     *
-     * @param table table name
-     * @return Class name
-     */
-    public static String getDaoClassName(String table, String basePackage) {
-        return getClassName(table, "Dao", basePackage, "dao");
-    }
-
-    /**
-     * Get mapper class file path
-     *
-     * @param table table name
-     * @return Class file path
-     */
-    public static String getDaoClassFilePath(String table, String basePackage, String projectDir) {
-        return getClassFilePath(table, "Dao", basePackage, "dao", projectDir);
-    }
-
-    /**
-     * Get mapper class package
-     *
-     * @param basePackage base package
-     * @return package
-     */
-    public static String getDaoPackage(String basePackage) {
-        return getPackage(basePackage, "dao");
-    }
-
-
-    /**
-     * Get mapper class name for short by table name
-     *
-     * @param table table name
-     * @return Class name for short
-     */
-    public static String getDaoImplClassName4Short(String table) {
-        return getClassName4Short(table, "DaoImpl");
-    }
-
-    /**
-     * Get mapper class name by table name
-     *
-     * @param table table name
-     * @return Class name
-     */
-    public static String getDaoImplClassName(String table, String basePackage) {
-        return getClassName(table, "DaoImpl", basePackage, "dao.impl");
-    }
-
-    /**
-     * Get mapper class file path
-     *
-     * @param table table name
-     * @return Class file path
-     */
-    public static String getDaoImplClassFilePath(String table, String basePackage, String projectDir) {
-        return getClassFilePath(table, "DaoImpl", basePackage, "dao.impl", projectDir);
-    }
-
-    /**
-     * Get mapper class package
-     *
-     * @param basePackage base package
-     * @return package
-     */
-    public static String getDaoImplPackage(String basePackage) {
-        return getPackage(basePackage, "dao.impl");
-    }
-
-
-    /**
      * Get entity class name by table name
      *
-     * @param table table name
+     * @param table       table name
+     * @param basePackage base package
      * @return Class name
      */
     public static String getEntityClassName(String table, String basePackage) {
@@ -300,35 +237,10 @@ public class Utils {
      */
     public static String getPackageDir(String basePackage, String projectDir) {
         File pomFile = new File(projectDir + "/pom.xml");
-        if (pomFile.exists()) { //maven project
+        if (pomFile.exists()) {
             return projectDir + "/src/main/java/" + getBasePackageDir(basePackage);
         }
         return projectDir + "/src/" + getBasePackageDir(basePackage);
-    }
-
-    /**
-     * Get resource directory
-     *
-     * @param basePackage
-     * @param projectDir
-     * @return
-     */
-    public static String getResourceDir(String basePackage, String projectDir) {
-        File pomFile = new File(projectDir + "/pom.xml");
-        if (pomFile.exists()) { //maven project
-            return projectDir + "/src/main/resources/" + getBasePackageDir(basePackage);
-        }
-        return projectDir + "/resources/" + getBasePackageDir(basePackage);
-    }
-
-    /**
-     * Get mapper class  xml file path
-     *
-     * @param table table name
-     * @return Class xml file path
-     */
-    public static String getMapperXmlFilePath(String table, String basePackage, String projectDir) {
-        return getClassXmlFilePath(table, "Mapper", basePackage, "mapper", projectDir);
     }
 
     private static String getBasePackageDir(String basePackage) {
@@ -344,17 +256,11 @@ public class Utils {
         return getPackage(basePackage, subPackage) + "." + getClassName4Short(table, suffix);
     }
 
-
     private static String getClassFilePath(String table, String suffix, String basePackage
             , String subPackage, String projectDir) {
         return getPackageDir(getPackage(basePackage, subPackage), projectDir) + "/"
                 + getClassName4Short(table, suffix) + ".java";
     }
 
-    private static String getClassXmlFilePath(String table, String suffix
-            , String backPackage, String subPackage, String projectDir) {
-        return getResourceDir(getPackage(backPackage, subPackage), projectDir) + "/"
-                + getClassName4Short(table, suffix) + ".xml";
-    }
 
 }
