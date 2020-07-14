@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @author IBIT程序猿
  */
-public class JdbcTypeTranslater {
+public class JdbcTypeTranslator {
     
     public static String getJavaClassName(int jdbcType) {
         return type2JavaClassNames.get(jdbcType);

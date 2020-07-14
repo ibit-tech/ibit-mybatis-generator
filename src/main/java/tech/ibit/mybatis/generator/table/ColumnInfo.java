@@ -2,7 +2,7 @@ package tech.ibit.mybatis.generator.table;
 
 import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
-import tech.ibit.mybatis.generator.util.JdbcTypeTranslater;
+import tech.ibit.mybatis.generator.util.JdbcTypeTranslator;
 import tech.ibit.mybatis.generator.util.Utils;
 
 import java.sql.Types;
@@ -111,8 +111,8 @@ public class ColumnInfo {
         this.nullable = nullable;
         this.comment = comment;
 
-        jdbcTypeName = JdbcTypeTranslater.getJdbcTypeName(jdbcType);
-        propertyClass = JdbcTypeTranslater.getJavaClassName(jdbcType);
+        jdbcTypeName = JdbcTypeTranslator.getJdbcTypeName(jdbcType);
+        propertyClass = JdbcTypeTranslator.getJavaClassName(jdbcType);
         propertyName = getPropertyByColumn(column);
     }
 
