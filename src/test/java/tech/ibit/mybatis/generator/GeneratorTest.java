@@ -21,8 +21,8 @@ public class GeneratorTest {
 
         // 设置jdbc路径
         String jdbcURL = "jdbc:mysql://localhost:3306/test?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";
-        String username = "root";
-        String password = "12345678";
+        String username = "**";
+        String password = "**";
 
         // 指定表明
         String[] tables = new String[]{
