@@ -6,7 +6,7 @@
 
     <groupId>tech.ibit</groupId>
     <artifactId>ibit-mybatis-generator</artifactId>
-    <version>2.1-SNAPSHOT</version>
+    <version>2.1</version>
     <packaging>jar</packaging>
 
 
@@ -16,7 +16,7 @@
         <java.version>1.8</java.version>
         <gpg.skip>false</gpg.skip>
         <javadoc.skip>false</javadoc.skip>
-        <ibit-mybatis.version>2.1-SNAPSHOT</ibit-mybatis.version>
+        <ibit-mybatis.version>2.1</ibit-mybatis.version>
 
         <commons-lang.version>2.6</commons-lang.version>
         <commons-io.version>2.4</commons-io.version>
@@ -164,6 +164,7 @@
             </plugin>
         </plugins>
     </build>
+
     <distributionManagement>
         <snapshotRepository>
             <id>oss</id>
