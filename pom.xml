@@ -6,7 +6,7 @@
 
     <groupId>tech.ibit</groupId>
     <artifactId>ibit-mybatis-generator</artifactId>
-    <version>2.1</version>
+    <version>2.2</version>
     <packaging>jar</packaging>
 
 
@@ -19,7 +19,7 @@
         <ibit-mybatis.version>2.1</ibit-mybatis.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-io.version>2.4</commons-io.version>
-        <mysql.version>5.1.37</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
 
     </properties>
 

@@ -17,7 +17,7 @@ public class GeneratorTest {
     @Ignore
     public void test() {
 
-        String driverName = "com.mysql.jdbc.Driver";
+        String driverName = "com.mysql.cj.jdbc.Driver";
 
         // 设置jdbc路径
         String jdbcURL = "jdbc:mysql://localhost:3306/test?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";

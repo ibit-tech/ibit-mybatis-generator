@@ -310,7 +310,7 @@ public class Generator {
      */
     private String getComment(Connection conn, String table) throws SQLException {
 
-        try (ResultSet rs = conn.getMetaData().getTables(null, null, table, null)) {
+        try (ResultSet rs = conn.getMetaData().getTables(conn.getCatalog(), null, table, null)) {
             if (rs.next()) {
                 return formatComment(rs.getString("REMARKS"), table);
             }
@@ -342,7 +342,7 @@ public class Generator {
      */
     private Set<String> getIds(Connection conn, String table) throws SQLException {
         Set<String> primaryKeys = new LinkedHashSet<>();
-        try (ResultSet pk = conn.getMetaData().getPrimaryKeys(null, null, table)) {
+        try (ResultSet pk = conn.getMetaData().getPrimaryKeys(conn.getCatalog(), conn.getSchema(), table)) {
             while (pk.next()) {
                 primaryKeys.add(pk.getString("COLUMN_NAME"));
             }
