@@ -19,52 +19,52 @@ public class ColumnInfo {
     /**
      * 属性类型（完整路径）
      */
-    private String propertyClass;
+    private final String propertyClass;
 
     /**
      * 属性名称
      */
-    private String propertyName;
+    private final String propertyName;
 
     /**
      * 列名
      */
-    private String column;
+    private final String column;
 
     /**
      * JDBC类型
      */
-    private int jdbcType;
+    private final int jdbcType;
 
     /**
      * JDBC类型名称
      */
-    private String jdbcTypeName;
+    private final String jdbcTypeName;
 
     /**
      * 是否为主键
      */
-    private boolean id;
+    private final boolean id;
 
     /**
      * 是否为自增长
      */
-    private boolean autoIncrement;
+    private final boolean autoIncrement;
 
     /**
      * 是否可为null
      */
-    private boolean nullable;
+    private final boolean nullable;
 
     /**
      * 列备注
      */
-    private String comment;
+    private final String comment;
 
     /**
      * 列类型
      */
-    private String columnType;
+    private final String columnType;
 
     /**
      * 构造函数

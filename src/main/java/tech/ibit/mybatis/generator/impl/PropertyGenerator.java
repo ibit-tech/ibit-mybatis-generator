@@ -90,15 +90,35 @@ public class PropertyGenerator extends AbstractGenerator {
         String columnTemplate = BLANK + "/**\n"
                 + BLANK + SPACE + "* %s\n"
                 + BLANK + SPACE + "*/\n"
-                + BLANK + "Column %s = new Column(TABLE, \"%s\");\n\n";
+                + BLANK + "Column %s = Column.getInstance(TABLE, \"%s\", %s);\n\n";
+
+        String idTemplate = BLANK + "/**\n"
+                + BLANK + SPACE + "* %s\n"
+                + BLANK + SPACE + "*/\n"
+                + BLANK + "Column %s = Column.getIdInstance(TABLE, \"%s\", %s);\n\n";
 
         //create columns
         tableInfo.getColumns()
                 .forEach(
-                        column ->
+                        column -> {
+                            if (column.isId()) {
                                 javaCode.append(
-                                        String.format(columnTemplate, StringUtils.trimToEmpty(column.getComment()), column.getPropertyName(), column.getColumn())
-                                )
+                                        String.format(idTemplate,
+                                                StringUtils.trimToEmpty(column.getComment()),
+                                                column.getPropertyName(),
+                                                column.getColumn(),
+                                                column.isAutoIncrement())
+                                );
+                            } else {
+                                javaCode.append(
+                                        String.format(columnTemplate,
+                                                StringUtils.trimToEmpty(column.getComment()),
+                                                column.getPropertyName(),
+                                                column.getColumn(),
+                                                column.isNullable())
+                                );
+                            }
+                        }
                 );
 
         //end class

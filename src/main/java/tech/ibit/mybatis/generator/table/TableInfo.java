@@ -28,22 +28,22 @@ public class TableInfo {
     /**
      * 表名
      */
-    private String table;
+    private final String table;
 
     /**
      * 备注
      */
-    private String comment;
+    private final String comment;
 
     /**
      * 列列表
      */
-    private List<ColumnInfo> columns;
+    private final List<ColumnInfo> columns;
 
     /**
      * 表别名
      */
-    private String alias;
+    private final String alias;
 
     /**
      * 构造函数
